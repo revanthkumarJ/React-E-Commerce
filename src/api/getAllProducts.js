@@ -7,7 +7,7 @@ export const getAllProducts=async()=>{
     const url=`${base_url}/products`
     try {
         const data=await axios.get(url);
-        console.log(data)
+       
         return data.data;
     } catch (error) {
         return error

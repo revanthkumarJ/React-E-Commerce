@@ -3,11 +3,15 @@ import { useEffect } from 'react'
 import { getAllProducts } from '../api/getAllProducts';
 import { useState } from 'react';
 import ProductCard from '../Components/ProductCard';
+import { useCart } from '../context/cart-context';
 
 export default function Home() {
 
   const [products,setProducts]=useState([])
+  const {cart}=useCart()
 
+  
+  console.log(cart)
   const fetchData = async () => {
     const data = await getAllProducts();
     setProducts(data);
